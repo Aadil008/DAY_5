@@ -1,0 +1,23 @@
+Wireshark Capture Summary (Anonymized)
+
+Capture details:
+- Interface: [redacted]
+- Duration: ~60 seconds
+- Actions: Visited a webpage, performed DNS lookups, ran ping tests (targets anonymized)
+
+Protocols observed:
+- DNS (UDP): Standard A-record queries and responses
+- HTTP (TCP): GET requests and 200 OK responses (no sensitive content)
+- TCP: SYN, SYN-ACK, ACK sequences and occasional retransmissions
+- ICMP: Echo request/reply for ping tests
+
+Selected packet observations (anonymized):
+1) DNS query -> response: Normal resolution for requested hostname.
+2) TCP three-way handshake: SYN -> SYN-ACK -> ACK observed to establish connection.
+3) HTTP GET: Browser requested page; response returned with typical headers.
+4) ICMP echo/reply: Ping packets show round-trip times around X ms (redacted).
+
+Recommendations:
+- Use display filters (e.g., `dns`, `http`, `tcp`, `icmp`) to focus analysis.
+- Avoid capturing sensitive payloads; redact when necessary.
+- Investigate repeated retransmissions if persistent; may indicate network instability.
